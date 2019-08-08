@@ -1,0 +1,40 @@
+server:
+  port: 8088
+  tomcat:
+    accesslog:
+      enabled: false
+    basedir: .
+#  ssl:
+#    key-store: "classpath:keystore.jks"
+#    key-store-password: changeit
+#    enabled: true
+  http:
+    port: 8088
+
+spring:
+  application:
+    name:  google-map-service
+  profiles:
+    active: local
+  output:
+    ansi:
+      enabled: ALWAYS
+
+management:
+  endpoints:
+    web:
+      base-path: /
+      exposure:
+        include: '*'
+
+properties:
+  google-map-properties:
+    host: https://maps.googleapis.com
+    timeout: 5000
+    nearBySearchUri: /maps/api/place/nearbysearch/json
+    placeDetailsUri: /maps/api/place/details/json
+    keys:
+      - AIzaSyAoqPHBSl-SGosC9XhOg2qE2PQtfB_Lkeo
+      - AIzaSyC4tmfSP8MdBnON712OOOPABaubhQmjLoo
+#      - AIzaSyC3Ic_qzcfKhVhwaVPpRG-HN9Ko7s3Cqy8
+      - AIzaSyBzQ6viFaiW93Clq5lOJXOZDZlZJFQDR9g
